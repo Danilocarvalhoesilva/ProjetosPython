@@ -1,0 +1,13 @@
+[Unit]
+Description=Sincronismo das configurações proxy nginx
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/home/danilo/backup/monit.sh
+ 
+[Install]
+WantedBy=multi-user.target

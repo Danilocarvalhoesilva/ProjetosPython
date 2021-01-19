@@ -1,0 +1,12 @@
+*CPU*
+----------------------
+97 of 100 percents
+
+*RAM*
+----------------------
+free: 3318 MB of 15862 MB total
+
+*HDD*
+----------------------
+Sist. Arq.                               Tam. Usado Disp.
+devtmpfs                                 7,8G     0  7,8G

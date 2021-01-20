@@ -28,7 +28,8 @@ help_string = []
 help_string.append("Escolha uma opção:\n\n")
 help_string.append("/start - Diga olá;\n")
 help_string.append("/help - Mostra ajuda;\n")
-help_string.append("/server - Status do servidor.")
+help_string.append("/server - Status do servidor;\n")
+help_string.append("/cups - Status do cups.")
 
 
 @bot.message_handler(commands=['start'])
@@ -61,12 +62,11 @@ def send_server(message):
 #print(bot.get_me())
 
 
-@bot.message_handler(commands=['ajuda', 'inicio'])
+@bot.message_handler(commands=['cups'])
 def send_welcome(message):
-    bot.reply_to(message, """\
-Hi there, I am EchoBot.
-I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
-""")
+    statuscups = os.system("systemctl status atd")
+    if statuscups == 0:
+        bot.reply_to(message," Status do cups OK!! ", parse_mode="Markdown") 
 
 """
 
